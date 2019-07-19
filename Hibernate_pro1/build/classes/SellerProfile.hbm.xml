@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated May 22, 2019 11:27:52 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.model.in.SellerProfile" table="SellerProfile">
+             <id name="product_id" type="int">
+            <column name="product_id" />
+            <generator class="increment" />
+        </id>
+          <property name="seller_id" type="int">
+            <column name="seller_id" />
+               </property>
+        <property name="product_name" type="java.lang.String">
+            <column name="product_name" />
+               </property>
+       
+        <property name="image" type="java.lang.String">
+            <column name="image" />
+        </property>
+      
+      
+          <property name="description"  type="java.lang.String" >
+            <column name="description" />
+        </property>
+        
+        <property name="price" type="int">
+            <column name="price" />
+        </property>
+        
+        
+    </class>
+</hibernate-mapping>
