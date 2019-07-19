@@ -90,7 +90,7 @@
         </div>
     </div>   
     
-    
+    <form action="contactusreg.jsp" method="post">
 
             <div class="container mt-4">
                 <form method="post" class="form">
@@ -102,26 +102,26 @@
                         <div class="Input1">
                        
                             <i class="fas fa-user fa-lg fa-fw" aria-hidden="true"></i>
-                            <input type="text" placeholder="Your Name" class="form-control" name="Name">
+                            <input type="text" placeholder="Your Name" class="form-control" name="name">
                         </div>
                         
                          <div class="Input1">
                           
                             <i class="fas fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
                             
-                            <input type="email" placeholder="Your Email" class="form-control" name="Email">
+                            <input type="email" placeholder="Your Email" class="form-control" name="email">
                         </div>
                        <div class="Input1">
                           
                             
                             <i class="fas fa-phone fa-lg fa-fw" aria-hidden="true"></i>
-                            <input type="number" placeholder="Your Contact Number" class="form-control" name="Number">
+                            <input type="text" placeholder="Your Contact Number" class="form-control" name="mobile">
                         </div>
                         
                        
                     
                     <div class="Input1">
-                    <textarea name="Message" class="form-control col-12" placeholder="Your Message *" style="width:80%; height: 150px;  " name="textarea1"></textarea>
+                    <textarea class="form-control col-12" placeholder="Your Message *" style="width:80%; height: 150px;"   name="message"></textarea>
                     <br>
                    </div>
                     
@@ -157,7 +157,7 @@
 
 
 
-
+</form>
 
 
 

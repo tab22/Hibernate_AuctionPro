@@ -15,6 +15,6 @@
       <mapping resource="Bidder.hbm.xml"/> 
          <mapping resource="Seller.hbm.xml"/>  
           <mapping resource="SellerProfile.hbm.xml"/> 
-      
+        <mapping resource="ContactUs.hbm.xml"/> 
     </session-factory>
 </hibernate-configuration>
