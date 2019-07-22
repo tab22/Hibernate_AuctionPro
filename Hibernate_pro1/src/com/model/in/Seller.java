@@ -7,7 +7,7 @@ public class Seller {
 		private String dob;
 		private String gender;
 		private String address;
-		private int mobile;
+		private String mobile;
 		private String password;
 
 		public Seller() {
@@ -16,7 +16,7 @@ public class Seller {
 		}
 	
 	
-		public Seller(int id, String name, String email, String dob, String gender, String address, int mobile,
+		public Seller(int id, String name, String email, String dob, String gender, String address, String mobile,
 				String password) {
 			super();
 			this.id = id;
@@ -64,10 +64,10 @@ public class Seller {
 		public void setAddress(String address) {
 			this.address = address;
 		}
-		public int getMobile() {
+		public String getMobile() {
 			return mobile;
 		}
-		public void setMobile(int mobile) {
+		public void setMobile(String mobile) {
 			this.mobile = mobile;
 		}
 		public String getPassword() {
@@ -76,8 +76,17 @@ public class Seller {
 		public void setPassword(String password) {
 			this.password = password;
 		}
+
+
+		@Override
+		public String toString() {
+			return "Seller [id=" + id + ", name=" + name + ", email=" + email + ", dob=" + dob + ", gender=" + gender
+					+ ", address=" + address + ", mobile=" + mobile + ", password=" + password + "]";
+		}
 		
 		
 
+		
+		
 	
 }

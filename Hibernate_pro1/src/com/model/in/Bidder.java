@@ -9,10 +9,10 @@ public class Bidder {
 	private String dob;
 	private String gender;
 	private String address;
-	private int mobile;
+	private String mobile;
 	private String password;
 
-	public Bidder(int id, String name, String email, String dob, String gender, String address, int mobile,
+	public Bidder(int id, String name, String email, String dob, String gender, String address, String mobile,
 			String password) {
 		super();
 		this.id = id;
@@ -67,10 +67,10 @@ public class Bidder {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public int getMobile() {
+	public String getMobile() {
 		return mobile;
 	}
-	public void setMobile(int mobile) {
+	public void setMobile(String mobile) {
 		this.mobile = mobile;
 	}
 	public String getPassword() {
@@ -79,6 +79,13 @@ public class Bidder {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	@Override
+	public String toString() {
+		return "Bidder [id=" + id + ", name=" + name + ", email=" + email + ", dob=" + dob + ", gender=" + gender
+				+ ", address=" + address + ", mobile=" + mobile + ", password=" + password + "]";
+	}
+	
+	
 	
 	
 	

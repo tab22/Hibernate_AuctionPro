@@ -8,12 +8,13 @@ public class SellerProfile {
 	public String image;
 	public String description;
 	public int price;
+	public String time;
 	public SellerProfile() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	public SellerProfile(int product_id, int seller_id, String product_name, String image, String description,
-			int price) {
+			int price, String time) {
 		super();
 		this.product_id = product_id;
 		this.seller_id = seller_id;
@@ -21,6 +22,7 @@ public class SellerProfile {
 		this.image = image;
 		this.description = description;
 		this.price = price;
+		this.time = time;
 	}
 	public int getProduct_id() {
 		return product_id;
@@ -58,10 +60,16 @@ public class SellerProfile {
 	public void setPrice(int price) {
 		this.price = price;
 	}
+	public String getTime() {
+		return time;
+	}
+	public void setTime(String time) {
+		this.time = time;
+	}
 	@Override
 	public String toString() {
 		return "SellerProfile [product_id=" + product_id + ", seller_id=" + seller_id + ", product_name=" + product_name
-				+ ", image=" + image + ", description=" + description + ", price=" + price + "]";
+				+ ", image=" + image + ", description=" + description + ", price=" + price + ", time=" + time + "]";
 	}
 	
 	

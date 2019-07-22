@@ -13,7 +13,7 @@ import java.io.IOException;
 	public class   BidderController extends HttpServlet {
 		private static final long serialVersionUID = 1L;
 	    public BidderController() {
-	        super();
+	       super();
 	        // TODO Auto-generated constructor stub
 	    }
 

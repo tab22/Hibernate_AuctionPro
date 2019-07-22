@@ -39,12 +39,13 @@ public class BidderDaoImpl implements BidderDao {
         
             
 		@Override
-		public boolean login(String username, String password) {
+		public boolean login(String email, String password) {
 		
 			 Session session = HibernateUtil.getSession();
 			  if (session != null) {
 			   try {
-			    Bidder bidder = (Bidder) session.get(Bidder.class, username);
+			    Bidder bidder = (Bidder) session.get(Bidder.class, email);
+			    
 			    if (password.equals(bidder.getPassword())) {
 			     System.out.println("User: " + bidder.toString());
 			     return true;

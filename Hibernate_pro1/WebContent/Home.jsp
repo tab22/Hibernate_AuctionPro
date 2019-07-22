@@ -1,11 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+
+<%@page import="com.dao.in.SellerProfileDaoImpl"%>
+<%@page import="com.dao.in.SellerProfileDao"%>
+<%@page import="java.util.List"%>
+<%@page import="com.model.in.SellerProfile"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Home</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+
 <style>
 
 
@@ -44,10 +49,7 @@
 	} */
 	
 	.card{
-	-webkit-box-shadow: -4px 3px 23px 13px rgba(97,72,35,0.86);
-	-moz-box-shadow: -4px 3px 23px 13px rgba(97,72,35,0.86);
-	box-shadow: -4px 3px 23px 13px rgba(97,72,35,0.86);
-	border-radius:30px;
+
 	}
 	
 	.card-footer{
@@ -60,10 +62,7 @@
 	}
 	
 	.img-fluid{
-		-webkit-box-shadow: -4px 2px 18px 9px rgba(191,74,53,0.98);
-		-moz-box-shadow: -4px 2px 18px 9px rgba(191,74,53,0.98);
-		box-shadow: -4px 2px 18px 9px rgba(191,74,53,0.98);
-		border: 1px solid brown;
+	
 	
 	}
 	
@@ -76,6 +75,26 @@
 		background-color:silver;
 	}
 	
+	
+	.footer {
+
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   height: 20%;
+   background-color: #212529;
+   text-align: center;
+   }
+   p{
+    
+    margin-top:20px;margin-left: 50px;color: whitesmoke;
+    font-size: 20px;
+}
+i{
+   
+font-size:20px;
+margin-top: 10px;
+}
 	
 
 </style>
@@ -99,103 +118,30 @@
  <div class="navbar-collapse collapse w-100 order-3 dual-collapse2"  id="navbarColor01">
         <ul class="navbar-nav ml-auto">
        <li class="nav-item active">
-                <a class="nav-link"  href="#" style="font-size: 25px">Home</a><span class="sr-only">(current)</span></a>
+                <a class="nav-link"  href="Home.jsp" style="font-size: 25px">Home</a><span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#" style="font-size: 25px">About Us </a>
             </li>
               <li class="nav-item">
-                <a class="nav-link" href="#" style="font-size: 25px">Contact</a>
+                <a class="nav-link" href="contactus.jsp" style="font-size: 25px">Contact</a>
             </li>
               <li class="nav-item">
-                <a class="nav-link" href="Bidder_Registration.jsp" style="font-size: 25px">Bidder </a>
+                <a class="nav-link" href="InsertBidder.jsp" style="font-size: 25px">Bidder </a>
             </li>
             
             <li class="nav-item">
-                <a class="nav-link" href="Seller_Registration.jsp" style="font-size: 25px">Seller</a>
+                <a class="nav-link" href="InsertSeller.jsp" style="font-size: 25px">Seller</a>
             </li>
         </ul>
     </div>
 </nav>
-
-
-       
-      
-
-<div id="divCard" class="container mt-5" >
-<div class="row">
-<div class="card-deck">
-	<div class="card cardSet1 col-4">
-		<div class="card-body">
-			<img src="Auction_image/Laptop.jpg" class="img-fluid" alt="loading...">
-			<h3 class="card-title">Laptop for sell</h3>
-			<h5 class="card-subtitle" style="font-family:cursive">Area of laptop </h5>
-			<input type="submit" id="setBid" style="" value="Set bid">
-			<a href="#" style="font-family: serif;margin-left:20px;">Know More</a>
-			</div>
-		<div class="card-footer bg-light">
-      		<small class="text-primary">Last updated 3 mins ago</small>
-    	</div>
-	</div>
-
-	<div class="card cardSet2 col-4">
-		<div class="card-body">
-			<img src="Auction_image/Laptop.jpg" class="img-fluid" alt="loading...">
-			<h3 class="card-title">Laptop for sell</h3>
-			<h5 class="card-subtitle" style="font-family:cursive">Area of laptop </h5>		
-			<input type="submit" id="setBid" style="" value="Set bid">
-		    <a href="#" style="font-family: serif;margin-left:20px;">Know More</a>
-			
-			
-		</div>
-		<div class="card-footer">
-      		<small class="text-primary">Last updated 3 mins ago</small>
-    	</div>
-	</div>
-	
-	<div class="card cardSet3 col-4">
-		<div class="card-body">
-			<img src="Auction_image/Laptop.jpg" class="img-fluid" alt="loading...">
-			<h3 class="card-title">Laptop for sell</h3>
-			<h5 class="card-subtitle"  style="font-family:cursive">Area of laptop </h5>
-			<input type="submit" id="setBid" style="" value="Set bid">
-		   <a href="#" style="font-family: serif;margin-left:20px;">Know More</a>
-			
-	   </div>
-		<div class="card-footer">
-      		<small class="text-primary">Last updated 3 mins ago</small>
-    	</div>
-	</div>
-	
-	<div class="card cardSet4 col-4">
-		<div class="card-body">
-			<img src="Auction_image/Laptop.jpg" class="img-fluid" alt="loading...">
-			<h3 class="card-title">Laptop for sell</h3>
-			<h5 class="card-subtitle" style="font-family:cursive">Area of laptop </h5>
-			<input type="submit" id="setBid" value="Set bid">
-			<a href="#" style="font-family: serif;margin-left:20px;">Know More</a>
-		</div>
-		<div class="card-footer">
-      		<small class="text-primary">Last updated 3 mins ago</small>
-    	</div>
-	</div>
-</div>
-</div>
-
-<div class="row container mt-5" >	
-	<div class="card cardSet5 col-4">
-		<div class="card-body">
-			<img src="Auction_image/Laptop.jpg" class="img-fluid" alt="loading...">
-			<h3 class="card-title" style="">Laptop for sell</h3>
-			<h5 class="card-subtitle" style="font-family:cursive">Area of laptop </h5>
-			<input type="submit" id="setBid" style="" value="Set bid">
-     		<a href="#" style="font-family: serif;margin-left:20px;">Know More</a>	
-		</div>
-		<div class="card-footer">
-      <small class="text-primary">Last updated 3 mins ago</small>
-    </div>
-	</div>
-</div>   
-</div>       
+ <iframe src="FetchDetails.jsp" height="800" width="1000">
+  
+</iframe>
+ 
+ 
+ 
+ <%@ include file ="Footer.jsp" %>     
 </body>
 </html>

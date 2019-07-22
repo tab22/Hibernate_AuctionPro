@@ -20,25 +20,30 @@ public class Login extends HttpServlet {
         
     }
 
-	
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String email = request.getParameter("email");
-		  String password = request.getParameter("password");
+		String password = request.getParameter("password");
 		  
-		  System.out.println(email + " :: " + password);
-		  String page = "InserBidder.jsp";
+	  System.out.println(email + " :: " + password);
+		 
+		  String page = "BidderProfile.jsp";
+
 		  if(email.trim().length() >= 0 && email != null &&
 		    password.trim().length() >= 0 && password != null) {
+			  
 		   BidderDao loginService = new BidderDaoImpl();
+		   
 		   boolean flag = loginService.login(email, password);
+		  
 		   if(flag) {
 		    System.out.println("Login success!!!");
 		    request.setAttribute("email", email);
 		    request.setAttribute("msg", "Login Success.....");
 		    page = "homepractice.jsp";
-		   } else {
-		    request.setAttribute("msg", "Wrong Username or Password, Try again!!!");
+		    	 
+		   } 
+		   else {
+			   request.setAttribute("msg", "Wrong Username or Password, Try again!!!");
 		   }
 		  } else {
 		   request.setAttribute("msg", "Please enter username and password...");

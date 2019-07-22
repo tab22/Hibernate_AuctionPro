@@ -32,7 +32,7 @@ public class SellerProfileDaoImpl  implements SellerProfileDao{
 		} catch (HibernateException h) {
 			System.out.println(h);
 		} finally {
-			//session.close();
+			session.close();
 			HibernateUtil.closeSessionFactory();
 		}
 		return id;

@@ -30,7 +30,7 @@
             <column name="address" />
         </property>
         
-        <property name="mobile" type="int">
+        <property name="mobile" type="java.lang.String">
             <column name="mobile"  length="20"/>
         </property>
         

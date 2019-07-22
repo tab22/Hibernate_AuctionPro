@@ -7,6 +7,7 @@
 </head>
 <body>
  </br> </br> </br>
+
  <h1>
   <div align="center">
    <% if(request.getAttribute("msg") != null) { %>
@@ -29,6 +30,7 @@
    </form>
  </h1>
  </div>
+
 </body>
 </html>
 

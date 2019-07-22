@@ -30,5 +30,10 @@
         </property>
         
         
+         <property name="time" type="java.lang.String">
+            <column name="time" />
+        </property>
+        
+        
     </class>
 </hibernate-mapping>
