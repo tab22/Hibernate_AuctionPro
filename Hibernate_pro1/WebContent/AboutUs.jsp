@@ -3,7 +3,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+<%@ include file ="navbar.jsp" %>     
 <meta charset="ISO-8859-1">
+    
 <title>About Us</title>
  <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
@@ -13,15 +15,14 @@
   -webkit-transform: scale(1.5); /* Safari 3-8 */
   transform: scale(1.5); 
 }
+
+
 </style>
 </head>
 
+<body background="image/images.jpg">
 
-
-
-<body>
-
-
+<H1>Team</H1>
 
 
     <div class="container mt-5">
@@ -126,11 +127,19 @@
 </div>
 
 
+<h1>About Us</h1>
+    <p>GameZone is a gaming website for those who want to explore all the exciting adventures games. </p>
+    <p>Your favouite games are just a click away. </p>
+    <p>You can book any game no need to stand in queue for buying tickets just order it online. </p>
+    <br><br>
+    <b><i>If you thinks there is a Hidden Gladiator inside you just book for your favourite games now.</i></b>
+    
+    <h1><i>Happy Gaming!!</i></h1>
+    
 
 
 
-
-
+<%@ include file ="Footer.jsp" %>     
 
 </body>
 </html>

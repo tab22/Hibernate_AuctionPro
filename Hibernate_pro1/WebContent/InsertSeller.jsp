@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<%@ include file ="navbar.jsp" %>     
 <meta charset="ISO-8859-1">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
@@ -238,6 +239,21 @@ function check()
 
 
 <body>
+
+
+
+<%
+		if (session != null) {
+			if (session.getAttribute("email") != null) {
+				String email = (String) session.getAttribute("email");
+				out.print("Hello, " + email + "  Welcome to your Profile");
+			} /* else {
+				response.sendRedirect("Login.jsp");
+			} */
+		}
+	%>
+
+
 			<div id="fullscreen_bg" class="fullscreen_bg"/>
 <div id="regContainer" class="container">
       <div class="row">
@@ -258,10 +274,10 @@ function check()
           <div class="panel-body">
             <div class="row">
               <div class="col-lg-12">
-                <form id="login-form" action="#" method="post" role="form" style="display: block;">
+                <form id="login-form" action="LoginSellerServlet" method="post" role="form" style="display: block;">
                   <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+                    <label for="username">Email ID</label>
+                    <input type="text" name="email" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
                   </div>
                   <div class="form-group">
                     <label for="password">Password</label>
@@ -334,5 +350,6 @@ function check()
       </div>
     </div>
   </div>
+  <%@ include file ="Footer.jsp" %>     
 </body>
 </html>

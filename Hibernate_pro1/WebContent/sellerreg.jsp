@@ -18,7 +18,8 @@
  int id=selDao.insert(emp);
     
  %>
-   Record inserted with <%=id %>
+ <h1></h1>
+ 
 
 
 </body>

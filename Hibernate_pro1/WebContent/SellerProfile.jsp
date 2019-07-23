@@ -5,20 +5,26 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  
 <meta charset="ISO-8859-1">
 <title>Seller Profile</title>
 <style>
 body{
 	margin:0;
 	padding:0;
-	background: url(image/3_Hammer.jpg);
-	background-size:cover; 
+ background: url(image/3_Hammer.jpg);
+background-size:cover; 
 	font-family: sans-serif;
 }
 
 .form-area{
 	position:absolute;
-	top:50%;
+	top:80%;
 	left:50%;
 	transform:translate(-50%,-50%);
 	width:500px;
@@ -99,9 +105,48 @@ margin:0;
 	font-size:14px;
 	font-weight:bold;
 }
+#session{
+	color: white;
+	font-size:24px;
+	font-weight:bold;
+
+	
+}
+.navbar-brand {
+  padding: 0 15px;
+  height: 80px;
+  line-height: 80px;
+}
+
+.nav-link{
+   font-size:15px;
+   margin-left:10px;
+}
+
+.navbar-toggle {
+  (80px - button height 34px) / 2 = 23px 
+  margin-top: 23px;
+  padding: 9px 10px !important;
+}
 </style>
 </head>
 <body>
+
+<%@ include file="ProfileNavbar.jsp" %>
+
+
+<div id="session">
+<%
+		if (session != null) {
+			if (session.getAttribute("email") != null) {
+				String email = (String) session.getAttribute("email");
+				out.print("Hello, " + email + "  Welcome to your Profile");
+			} /* else {
+				response.sendRedirect("Login.jsp");
+			} */
+		}
+	%>
+	</div>
 
 <%-- 	<%
 	String name=request.getParameter("name");  
@@ -126,22 +171,24 @@ margin:0;
      
      
     <br><br><p>Price</p>
-	<input type="number" name="price" id="Price" placeholder="Price" min="1000" max="8000" required>
+	<input type="number" name="price" id="Price" placeholder="Price" min="1000"  required="required">
 	
 	
 	
 	<br><br><p>DATE &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 	<input type="text" id="appt" name="time" min="9:00" max="18:00" required>	
        <span style="color:white">(mon date,year)</span>
-
+<br>
+<br>
+<br>
 	
-     <input type="submit">
+     <input type="submit" value="Insert Auction Product">
      
     
      </form>
     
 </div>
 
-
+     
 </body>
 </html>

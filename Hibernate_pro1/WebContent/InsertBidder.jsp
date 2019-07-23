@@ -6,6 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<%@ include file ="navbar.jsp" %>     
 <meta charset="ISO-8859-1">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
@@ -252,6 +253,7 @@ $(function() {
       </div>
     </div>
   </div>
+  <%@ include file ="Footer.jsp" %>     
 </body>
 </html>
 

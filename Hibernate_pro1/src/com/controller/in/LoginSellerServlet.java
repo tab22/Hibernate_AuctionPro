@@ -1,8 +1,6 @@
 package com.controller.in;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,19 +8,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.model.in.Bidder;
+import com.model.in.Seller;
 import com.services.in.LoginService;
 
 /**
- * Servlet implementation class LoginServlet
+ * Servlet implementation class LoginSellerServlet
  */
-@WebServlet("/LoginServlet")
-public class LoginServlet extends HttpServlet {
+@WebServlet("/LoginSellerServlet")
+public class LoginSellerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LoginServlet() {
+    public LoginSellerServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -39,22 +38,36 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		PrintWriter out=response.getWriter(); 
-		String email = request.getParameter("email");   
+		 String email = request.getParameter("email");   
 	     String password = request.getParameter("password");
 	     
 	     LoginService loginService = new LoginService();
-	     boolean result = loginService.authenticateUser(email, password);
-	     Bidder bidder = loginService.getUserByUserId(email);
+	     boolean result = loginService.authenticateSeller(email, password);
+	     Seller seller = loginService.getSellerByUserId(email);
 	   	     if(result == true){
 	         request.getSession().setAttribute("email", email);      
-	         response.sendRedirect("BidderProfile.jsp");
+	         response.sendRedirect("SellerProfile.jsp");
 	     }
 	     else{
-	         response.sendRedirect("InsertBidder.jsp");
-	         out.print("invalid email or password");
+	         response.sendRedirect("InsertSeller.jsp");
+		
+		
+		
+		
+		
+		
+		
 	     }
-		}
+	}
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 

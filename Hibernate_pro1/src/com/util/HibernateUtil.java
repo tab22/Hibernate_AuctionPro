@@ -36,7 +36,7 @@ public class HibernateUtil {
 			if (registry != null) {
 				StandardServiceRegistryBuilder.destroy(registry);
 			}
-			//sessionFactory.close();
+		//SsessionFactory.close();
 		}
 		
 		public static void main(String[] args) {
