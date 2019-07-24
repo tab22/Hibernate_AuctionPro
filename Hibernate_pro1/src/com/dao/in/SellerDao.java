@@ -8,4 +8,5 @@ public interface SellerDao {
 
 	 public boolean login(String username, String password);
 
+
 }

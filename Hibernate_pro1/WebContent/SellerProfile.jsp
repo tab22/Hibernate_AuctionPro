@@ -160,23 +160,23 @@ response.setHeader("Cache-Control","no-cache,no-store,must-revalidate");
 	
 	<form action="SellerProfilereg.jsp"><p></p>
 
-	<p>Product Name</p>
-	<input type="text" name="product_name" id="ProductName" placeholder="Product_name">
+	<p style="font-size: 15px">Product Name</p>
+	<input type="text" name="product_name" id="ProductName"  placeholder="Product_name">
 	
-	<br><br><p>Description</p>
+	<br><br><p style="font-size: 15px">Description</p>
 	<input type="text" name="description" id="Description" placeholder="Description">
 	
 	
-	<br><br><p>Upload image</p><br>
+	<br><br><p style="font-size: 15px">Upload image</p><br>
 	<p><input type="file" name="image" accept="Auction_image/*">
      
      
-    <br><br><p>Price</p>
+    <br><br><p style="font-size: 15px">Price</p>
 	<input type="number" name="price" id="Price" placeholder="Price" min="1000"  required="required">
 	
 	
 	
-	<br><br><p>DATE &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+	<br><br><p style="font-size: 15px">DATE &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 	<input type="text" id="appt" name="time" min="9:00" max="18:00" required>	
        <span style="color:white">(mon date,year)</span>
 <br>

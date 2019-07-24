@@ -127,7 +127,7 @@
 </div>
 
 
-<h1>About Us</h1>
+<!-- <h1>About Us</h1>
     <p>GameZone is a gaming website for those who want to explore all the exciting adventures games. </p>
     <p>Your favouite games are just a click away. </p>
     <p>You can book any game no need to stand in queue for buying tickets just order it online. </p>
@@ -135,7 +135,7 @@
     <b><i>If you thinks there is a Hidden Gladiator inside you just book for your favourite games now.</i></b>
     
     <h1><i>Happy Gaming!!</i></h1>
-    
+     -->
 
 
 

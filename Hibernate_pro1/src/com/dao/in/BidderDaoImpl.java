@@ -66,7 +66,7 @@ public class BidderDaoImpl implements BidderDao {
 		
 		}
 
-
+	
 		
 	}
 

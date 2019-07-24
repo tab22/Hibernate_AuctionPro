@@ -78,6 +78,9 @@ response.setHeader("Cache-Control","no-cache,no-store,must-revalidate");
 <div class="gallery">
  <img src="<%=f.getImage() %>"width="600" height="400"/>
  <h3 class="card-title"><%=f.getProduct_id()%></h3>
+<form action="BidPage.jsp" method="post">
+ <input type="submit" value="Bid Now">
+ </form>
 			<h5 class="card-subtitle" style="font-family:cursive"><%=f.getProduct_name() %> </h5>
 			</a>
   <div class="desc"><%=f.getDescription()%></div>
@@ -90,7 +93,7 @@ response.setHeader("Cache-Control","no-cache,no-store,must-revalidate");
 
 var countDownDate = new Date("<%=f.getTime()%>").getTime();
 
-
+/* <a href=" InsertBidder.jsp">Bid Now</a> */
 
 var x = setInterval(function() {
 

@@ -1,4 +1,4 @@
-<%@page import="com.dao.in.SellerProfileDaoImpl"%>
+y<%@page import="com.dao.in.SellerProfileDaoImpl"%>
 <%@page import="com.dao.in.SellerProfileDao"%>
 <%@page import="java.util.List"%>
 <%@page import="com.model.in.SellerProfile"%>
@@ -63,11 +63,13 @@ p {
 			
   <div class="desc"><%=f.getDescription()%></div>
  
- <form action="InsertBidder.jsp" method="post">
+ <!-- <form action="InsertBidder.jsp" method="post">
    <input type="sumbit" class ="btn btn-success" value="Bid Now">
 
-</form>
+</form> -->
 
+ <a href=" InsertBidder.jsp">Bid Now</a>
+ 
 <script>
 
 

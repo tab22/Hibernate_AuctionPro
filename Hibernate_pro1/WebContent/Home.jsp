@@ -22,8 +22,12 @@ text-align: center;
 
 }
 
-</style>
+footer{
+position:relative;
 
+}
+
+</style>
 
 
 
@@ -45,15 +49,16 @@ text-align: center;
   </div>
  
   
- 
+ <!-- 
   <iframe src="FetchDetails.jsp" height="900" width="1050">
   
 </iframe>
+ -->
+   <%@ include file ="FetchDetails.jsp" %> 
 
-<%--   <%@ include file ="FetchDetails.jsp" %> --%>   
- <br> 
-
- 
- <%@ include file ="Footer.jsp" %>     
+<footer>
+ <%@ include file ="Footer.jsp" %>
+ </footer>  
+    
 </body>
 </html>

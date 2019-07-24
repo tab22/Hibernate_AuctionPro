@@ -133,7 +133,7 @@ border-radius:0;
 }
 
 .fullscreen_bg {
-    position: fixed;
+   
     top: 0;
     right: 0;
     bottom: 0;
@@ -278,7 +278,7 @@ function validation()
 
 
 
-<%
+<%-- <%
 		if (session != null) {
 			if (session.getAttribute("email") != null) {
 				String email = (String) session.getAttribute("email");
@@ -288,7 +288,7 @@ function validation()
 			} */
 		}
 	%>
-<br>
+<br> --%>
 <br>
 
 
