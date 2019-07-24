@@ -1,8 +1,3 @@
-
-
-
-
-<%@page import="org.hibernate.hql.internal.ast.util.ASTUtil.IncludePredicate"%>
 <%@page import="com.dao.in.SellerProfileDaoImpl"%>
 <%@page import="com.dao.in.SellerProfileDao"%>
 <%@page import="java.util.List"%>
@@ -13,13 +8,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-
-
-   
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <style>
-
-
 div.gallery {
   margin: 5px;
   border: 1px solid #ccc;
@@ -41,34 +31,13 @@ p {
   font-size: 60px;
   margin-top: 0px;
 }
-
-
-
 </style>
 <title>Insert title here</title>
 </head>
 <body>
 
-<%@ include file= "ProfileNavbar.jsp" %>
-<h1>
-<%
-response.setHeader("Cache-Control","no-cache,no-store,must-revalidate");
-		if (session != null) {
-			if (session.getAttribute("email") != null) {
-				String email = (String) session.getAttribute("email");
-				out.print("Hello, " + email + "<br>  Welcome to your Profile");
-				
-				
-			} /* else {
-				response.sendRedirect("Login.jsp");
-			} */
-			
-			
-		}
-	%>
-	</h1>
-<br><br>
-
+<%@ include file="navbar.jsp" %>
+  
 <%
     SellerProfileDao sellerproductDao= new SellerProfileDaoImpl();
         List<SellerProfile>eList = sellerproductDao.ShowAll();
@@ -79,10 +48,25 @@ response.setHeader("Cache-Control","no-cache,no-store,must-revalidate");
  <img src="<%=f.getImage() %>"width="600" height="400"/>
  <h3 class="card-title"><%=f.getProduct_id()%></h3>
 			<h5 class="card-subtitle" style="font-family:cursive"><%=f.getProduct_name() %> </h5>
-			</a>
+		
   <div class="desc"><%=f.getDescription()%></div>
+  
+  
+ 
+ 
+<form action="Adminjsp.jsp" method="post">
+  <input type="submit" class="btn btn-danger" value="Delete Product"  onclick="<%=f.getProduct_id() %>"> 
+ 
+    
+  
+  
+  
+<!--   
+  <a href="Adminjsp.jsp">Delete</a>  -->
+ <input type="button" class="btn btn-primary" value="Update Time" >
  
    
+</form>
 
 
 <script>
@@ -116,6 +100,9 @@ var x = setInterval(function() {
     document.getElementById("demo").innerHTML = "EXPIRED";
   }
 }, 1000);
+
+
+
 </script>
    <p id="<%=f.getProduct_id()%>"></p>
 </div>
@@ -125,7 +112,5 @@ var x = setInterval(function() {
 
 
 
-  
-
-</body>
+  </body>
 </html>

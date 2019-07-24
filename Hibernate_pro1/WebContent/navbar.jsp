@@ -44,7 +44,7 @@ background: linear-gradient(90deg, rgba(42,26,127,1) 0%, rgba(57,57,162,1) 35%, 
 <body>
 
 <nav class="navbar navbar-expand-lg">
-  <a class="navbar-brand" style="font-size: 50px;font-family: cursive;" href="home.jsp">PSA.com</a>
+  <a class="navbar-brand" style="font-size: 50px;font-family: cursive;" href="Admin.jsp">PSA.com</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -56,7 +56,7 @@ background: linear-gradient(90deg, rgba(42,26,127,1) 0%, rgba(57,57,162,1) 35%, 
                 <a class="nav-link"  href="Home.jsp" style="font-size: 25px">Home</a><span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#" style="font-size: 25px">About Us </a>
+                <a class="nav-link" href="AboutUs.jsp" style="font-size: 25px">About Us </a>
             </li>
               <li class="nav-item">
                 <a class="nav-link" href="contactus.jsp" style="font-size: 25px">Contact</a>

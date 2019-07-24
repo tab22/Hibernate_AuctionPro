@@ -63,9 +63,10 @@ p {
 			
   <div class="desc"><%=f.getDescription()%></div>
  
-   <span><i class="fas fa-shopping-cart"></i><input type="button" class ="btn btn-success" value="Bid Now"></span>
+ <form action="InsertBidder.jsp" method="post">
+   <input type="sumbit" class ="btn btn-success" value="Bid Now">
 
-
+</form>
 
 <script>
 

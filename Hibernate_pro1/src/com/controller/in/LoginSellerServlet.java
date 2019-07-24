@@ -49,7 +49,7 @@ public class LoginSellerServlet extends HttpServlet {
 	         response.sendRedirect("SellerProfile.jsp");
 	     }
 	     else{
-	         response.sendRedirect("InsertSeller.jsp");
+	         response.sendRedirect("error.jsp");
 		
 		
 		

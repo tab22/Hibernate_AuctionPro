@@ -1,17 +1,25 @@
 
-
-
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
+
 <head>
-<%@ include file ="navbar.jsp" %>     
-<meta charset="ISO-8859-1">
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+ <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+ <script src="js/jquery.validate.js" type="text/javascript"></script>
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap.js" type="text/javascript"></script>
+        
+         <script src="js/jquery.validate.js" type="text/javascript"></script>
+         <script src="js/additional-methods.js" type="text/javascript"></script> 
+       
+
+<%@ include file ="navbar.jsp" %>
 <title>Registration</title>
+
 <style>
 #regContainer{
     margin-top: 3%;  
@@ -101,7 +109,7 @@
 }
 
 .fullscreen_bg {
-    position: fixed;
+    
     top: 0;
     right: 0;
     bottom: 0;
@@ -134,10 +142,9 @@
 }
 
 </style>
-</head>
 
 <script>
-$(function() {
+ $(function() {
 
     $('#login-form-link').click(function(e) {
 		$("#login-form").delay(100).fadeIn(100);
@@ -155,7 +162,92 @@ $(function() {
 	});
 
 });
-</script>
+
+ function validation()                                    
+ { 
+     var name = document.forms["RegForm"]["name"];               
+     var email = document.forms["RegForm"]["email"];    
+     var dob = document.forms["RegForm"]["dob"];  
+     var mobile = document.forms["RegForm"]["mobile"];  
+     var gender =  document.forms["RegForm"]["gender"];  
+     var password = document.forms["RegForm"]["password"];  
+     var address = document.forms["RegForm"]["address"];  
+    
+     if (name.value == "")                                  
+     { 
+         window.alert("Please enter your name."); 
+         name.focus(); 
+         return false; 
+     } 
+    
+     if (email.value == "")                                   
+     { 
+         window.alert("Please enter a valid e-mail address."); 
+         email.focus(); 
+         return false; 
+     } 
+     if (email.value.indexOf("@", 0) < 0)                 
+     { 
+         window.alert("Please enter a valid e-mail address."); 
+         email.focus(); 
+         return false; 
+     } 
+     if (email.value.indexOf(".", 0) < 0)                 
+     { 
+         window.alert("Please enter a valid e-mail address."); 
+         email.focus(); 
+         return false; 
+     } 
+     if (dob.value == "")                           
+     { 
+         window.alert("Please enter your date of birth."); 
+         dob.focus(); 
+         return false; 
+     } 
+     if (address.value == "")                               
+     { 
+         window.alert("Please enter your address."); 
+         address.focus(); 
+         return false; 
+     } 
+     if (gender.value == "")                           
+     { 
+         window.alert("Please enter your gender"); 
+         gender.focus(); 
+         return false; 
+     } 
+    
+   
+      if (mobile.value == "")                           
+     { 
+         window.alert("Please enter your telephone number."); 
+         mobile.focus(); 
+         return false; 
+     } 
+    
+     if (password.value == "")                        
+     { 
+         window.alert("Please enter your password"); 
+         password.focus(); 
+         return false; 
+     } 
+    
+     if (what.selectedIndex < 1)                  
+     { 
+         alert("Please enter your course."); 
+         what.focus(); 
+         return false; 
+     } 
+    
+     return true; 
+ }</script> 
+
+ 
+
+
+
+</head>
+
 
 
 <body>
@@ -199,14 +291,14 @@ $(function() {
                     </div>
                   </div>
                 </form>
-                <form id="register-form" action="bidderreg.jsp" method="post" role="form" style="display: none;">
+                <form id="register-form"  name="RegForm" action="bidderreg.jsp" onsubmit="return validation()" method="post"  style="display: none;">
                   <div class="form-group">
                     <label for="username">Name</label>
                     <input type="text" name="name" id="name" tabindex="1" class="form-control" placeholder="Enter Your Name " value="">
                   </div>
                   <div class="form-group">
                     <label for="password">Email</label>
-                    <input type="email" name="email" id="emailId" tabindex="2" class="form-control" placeholder="Enter  Your Email" required="required">
+                    <input type="email" name="email" id="emailId" tabindex="2" class="form-control" placeholder="Enter  Your Email">
                   </div>
                   
                   
@@ -218,18 +310,18 @@ $(function() {
     			  
                   <div class="form-group">
                     <label for="Gender">Gender</label>&emsp;&emsp;
-								<label class="radio-inline"><input type="radio" name="gender"><strong>Male</strong></label>
-								<label class="radio-inline"><input type="radio" name="gender"><strong>Female</strong></label>
+								<label class="radio-inline"><input type="radio" name="gender" value="male"><strong>Male</strong></label>
+								<label class="radio-inline"><input type="radio" name="gender" value="female"><strong>Female</strong></label>
 	                  </div>
 	                  
 	                     <div class="form-group">
                     <label for="Address">Address</label>
-                    <input type="text" name="address" id="Address" tabindex="5" class="form-control" placeholder="Address" required onkeyup="checkAdrs(); return false;" ><span id="message"></span>
+                    <input type="text" name="address" id="Address" tabindex="5" class="form-control" placeholder="Address"   ><span id="message"></span>
                   </div>
                   
                      <div class="form-group">
                     <label for="mobile">Mobile</label>
-                    <input type="number" name="mobile" id="mobile" tabindex="5" class="form-control" placeholder="Mobile Number" pattern="\d{3}[\-]\d{3}[\-]\d{4}" required onkeyup="check(); return false;" ><span id="message"></span>
+                    <input type="number" name="mobile" id="mobile" tabindex="5" class="form-control" placeholder="Mobile Number"   ><span id="message"></span>
                   </div>
                   
 	                   <div class="form-group">
@@ -253,7 +345,11 @@ $(function() {
       </div>
     </div>
   </div>
-  <%@ include file ="Footer.jsp" %>     
+</div>
+
 </body>
+ <%@ include file ="Footer.jsp" %> 
 </html>
+
+
 

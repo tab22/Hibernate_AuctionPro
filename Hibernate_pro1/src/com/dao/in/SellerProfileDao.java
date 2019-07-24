@@ -10,4 +10,14 @@ public interface SellerProfileDao {
 	public int insert(SellerProfile sp);
 
 	   List<SellerProfile> ShowAll();
+	   
+	   void delete(int product_name);
+
+	   
+	    void update(SellerProfile s);
+	   
+	   
+	   
+	   
+	   
 }

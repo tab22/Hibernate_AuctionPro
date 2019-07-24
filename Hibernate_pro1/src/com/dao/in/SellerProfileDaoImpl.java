@@ -33,7 +33,7 @@ public class SellerProfileDaoImpl  implements SellerProfileDao{
 			System.out.println(h);
 		} finally {
 			session.close();
-			HibernateUtil.closeSessionFactory();
+			//HibernateUtil.closeSessionFactory();
 		}
 		return id;
 
@@ -59,12 +59,72 @@ public class SellerProfileDaoImpl  implements SellerProfileDao{
 	         tx.commit();		
 		}finally{
 		session.close();
-		HibernateFetch.closeSessionFactory();
+		//HibernateFetch.closeSessionFactory();
         }
 
         return eList;
 	}
 
+	@Override
+	public void delete(int product_name) {
+		Session session = null;;
+		Transaction tx = null;
+
+		try {
+			session = HibernateUtil.getSession();
+			tx = session.beginTransaction();
+			
+			SellerProfile sp = session.get(SellerProfile.class, product_name);
+			System.out.println(sp.getProduct_id());
+			session.delete(sp);
+			//session.delete("Employee.class", empno);
+			/*Employee e=  session.load(Employee.class,empno);
+			session.remove(e);*/
+
+			tx.commit();
+		} catch (HibernateException h) {
+			System.out.println(h);
+		} finally {
+			session.close();
+			//HibernateUtil.closeSessionFactory();
+		}
+	
+		
+		
+		
+		
+		
+	}
+
+	@Override
+	public void update(SellerProfile s) {
+		Session session = null;;
+		Transaction tx = null;
+		try {
+			session = HibernateUtil.getSession();
+			tx = session.beginTransaction();
+			int sp = s.getProduct_id();
+			SellerProfile seller = session.get(SellerProfile.class, sp);
+			System.out.println(s.getProduct_id() + " " + s.getTime());
+			seller.setTime(s.getTime());
+			
+			session.save(seller);
+			tx.commit();
+		} catch (HibernateException h) {
+			System.out.println(h);
+		} finally {
+			session.close();
+			//HibernateUtil.closeSessionFactory();
+		}	
+		
+	}
+		
+		
+		
+		
+		
+	}
 
 
-}
+
+

@@ -19,6 +19,7 @@ position:center;
 }
 .img2{
 text-align: center;
+
 }
 
 </style>

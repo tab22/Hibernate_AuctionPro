@@ -3,7 +3,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<%@ include file ="navbar.jsp" %>     
+
+
+
 <meta charset="ISO-8859-1">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
@@ -164,7 +166,11 @@ border-radius:0;
 }
 
 </style>
+
+  
+
 </head>
+   
 
 <script>
 $(function() {
@@ -186,59 +192,89 @@ $(function() {
 
 });
 
-//Mobile Validation
-function check()
-{
+function validation()                                    
+{ 
+    var name = document.forms["RegForm"]["name"];               
+    var email = document.forms["RegForm"]["email"];    
+    var dob = document.forms["RegForm"]["dob"];  
+    var mobile = document.forms["RegForm"]["mobile"];  
+    var gender =  document.forms["RegForm"]["gender"];  
+    var password = document.forms["RegForm"]["password"];  
+    var address = document.forms["RegForm"]["address"];  
+   
+    if (name.value == "")                                  
+    { 
+        window.alert("Please enter your name."); 
+        name.focus(); 
+        return false; 
+    } 
+   
+    if (email.value == "")                                   
+    { 
+        window.alert("Please enter a valid e-mail address."); 
+        email.focus(); 
+        return false; 
+    } 
+    if (email.value.indexOf("@", 0) < 0)                 
+    { 
+        window.alert("Please enter a valid e-mail address."); 
+        email.focus(); 
+        return false; 
+    } 
+    if (email.value.indexOf(".", 0) < 0)                 
+    { 
+        window.alert("Please enter a valid e-mail address."); 
+        email.focus(); 
+        return false; 
+    } 
+    if (dob.value == "")                           
+    { 
+        window.alert("Please enter your date of birth."); 
+        dob.focus(); 
+        return false; 
+    } 
+    if (address.value == "")                               
+    { 
+        window.alert("Please enter your address."); 
+        address.focus(); 
+        return false; 
+    } 
+    if (gender.value == "")                           
+    { 
+        window.alert("Please enter your gender"); 
+        gender.focus(); 
+        return false; 
+    } 
+   
+  
+     if (mobile.value == "")                           
+    { 
+        window.alert("Please enter your telephone number."); 
+        mobile.focus(); 
+        return false; 
+    } 
+   
+    if (password.value == "")                        
+    { 
+        window.alert("Please enter your password"); 
+        password.focus(); 
+        return false; 
+    } 
+   
+    if (what.selectedIndex < 1)                  
+    { 
+        alert("Please enter your course."); 
+        what.focus(); 
+        return false; 
+    } 
+   
+    return true; 
+}</script> 
 
-    var pass1 = document.getElementById('mobile');
-
-
-    var message = document.getElementById('message');
-
-   var goodColor = "#0C6";
-    var badColor = "red";
-
-    if(mobile.value.length!=10){
-
-       
-        message.style.color = badColor;
-        message.innerHTML = "Required 10 digits !!"
-    }}
-    
-    function checkAdrs()
-    {
-    	var pass1 = document.getElementById('mobile');
-
-
-        var message = document.getElementById('message');
-    	if(Address.value.length==0)
-    		{
-    		   message.style.color = badColor;
-    	        message.innerHTML = "Address Required !!"
-    		}
-    	
-    }
-
-
-
-
-// DOB
- $(document).ready(function(){
-      var date_input=$('input[name="date"]'); //our date input has the name "date"
-      var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
-      var options={
-        format: 'mm/dd/yyyy',
-        container: container,
-        todayHighlight: true,
-        autoclose: true,
-      };
-      date_input.datepicker(options);
-    })
-
-</script>
 
 
 <body>
+
 
 
 
@@ -252,6 +288,9 @@ function check()
 			} */
 		}
 	%>
+<br>
+<br>
+
 
 
 			<div id="fullscreen_bg" class="fullscreen_bg"/>
@@ -297,14 +336,14 @@ function check()
                 </form>
                 
                 
-                <form id="register-form" action="sellerreg.jsp" method="post" role="form" style="display: none;">
+                <form id="register-form" name="RegForm" action="sellerreg.jsp" method="post" role="form" onsubmit="return validation()" style="display: none;">
                   <div class="form-group">
                     <label for="username">Name</label>
                     <input type="text" name="name" id="name" tabindex="1" class="form-control" placeholder="Username" value="">
                   </div>
                   <div class="form-group">
                     <label for="password">Email</label>
-                    <input type="email" name="email" id="emailId" tabindex="2" class="form-control" placeholder="Password" required="required">
+                    <input type="email" name="email" id="emailId" tabindex="2" class="form-control" placeholder="Password" >
                   </div>
                   
                   
@@ -322,12 +361,12 @@ function check()
 	                  
 	                     <div class="form-group">
                     <label for="Address">Address</label>
-                    <input type="text" name="address" id="Address" tabindex="5" class="form-control" placeholder="Address" required onkeyup="checkAdrs(); return false;" ><span id="message"></span>
+                    <input type="text" name="address" id="Address" tabindex="5" class="form-control" placeholder="Address"  ><span id="message"></span>
                   </div>
                   
                      <div class="form-group">
                     <label for="mobile">Mobile</label>
-                    <input type="number" name="mobile" id="mobile" tabindex="5" class="form-control" placeholder="Mobile Number" pattern="\d{3}[\-]\d{3}[\-]\d{4}" required onkeyup="check(); return false;" ><span id="message"></span>
+                    <input type="number" name="mobile" id="mobile" tabindex="5" class="form-control" placeholder="Mobile Number" " ><span id="message"></span>
                   </div>
                   
 	                   <div class="form-group">
@@ -351,5 +390,6 @@ function check()
     </div>
   </div>
   <%@ include file ="Footer.jsp" %>     
+
 </body>
 </html>

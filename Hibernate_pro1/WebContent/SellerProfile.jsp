@@ -137,6 +137,7 @@ margin:0;
 
 <div id="session">
 <%
+response.setHeader("Cache-Control","no-cache,no-store,must-revalidate");
 		if (session != null) {
 			if (session.getAttribute("email") != null) {
 				String email = (String) session.getAttribute("email");

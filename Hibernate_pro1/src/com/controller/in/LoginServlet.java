@@ -51,7 +51,7 @@ public class LoginServlet extends HttpServlet {
 	         response.sendRedirect("BidderProfile.jsp");
 	     }
 	     else{
-	         response.sendRedirect("InsertBidder.jsp");
+	         response.sendRedirect("error.jsp");
 	         out.print("invalid email or password");
 	     }
 		}

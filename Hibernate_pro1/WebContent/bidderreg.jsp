@@ -18,7 +18,8 @@
  int id=selDao.insert(emp);
     
  %>
-   Record inserted with <%=id %>
+ 
+ <%@ include file="regsuccessfull.jsp" %>
 
 
 </body>

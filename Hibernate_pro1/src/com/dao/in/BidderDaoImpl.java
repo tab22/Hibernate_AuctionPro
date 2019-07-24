@@ -29,7 +29,7 @@ public class BidderDaoImpl implements BidderDao {
 				System.out.println(h);
 			} finally {
 				session.close();
-				HibernateUtil.closeSessionFactory();
+				//HibernateUtil.closeSessionFactory();
 			}
 			return id;
 
