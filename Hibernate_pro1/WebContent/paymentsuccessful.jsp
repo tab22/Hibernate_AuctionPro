@@ -22,7 +22,7 @@ p{
 font-size:50px;
 font-family:cursive;
 text-align:center;
-	color:Red;
+	color:green;
 }
 </style>
 </head>
@@ -30,7 +30,8 @@ text-align:center;
 	<%@ include file="ProfileNavbar.jsp" %>
 	<div class="container mt-5">
 	<p>
-	Your product Details uploaded successfully....
+	Congratulations!!!!!!!!!<br>
+	You Paid Successfully!!!!
 	</p>
 	</div>
 	

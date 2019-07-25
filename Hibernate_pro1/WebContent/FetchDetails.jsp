@@ -116,7 +116,7 @@ document.write(countDownDate);
  
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("<%=f.getProduct_id()%>").innerHTML = "EXPIRED";
+    document.getElementById("demo").innerHTML = "EXPIRED";
   }
 }, 1000);
 </script> 

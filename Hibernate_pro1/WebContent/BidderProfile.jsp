@@ -69,24 +69,37 @@ response.setHeader("Cache-Control","no-cache,no-store,must-revalidate");
 	</h1>
 <br><br>
 
+
+ <form method="Post" action="ImageServlet">
 <%
     SellerProfileDao sellerproductDao= new SellerProfileDaoImpl();
         List<SellerProfile>eList = sellerproductDao.ShowAll();
+        int i=0;
+        
+        
         for (SellerProfile f:eList)
         	{
+        	
+        	System.out.println("jsp-"+f.getProduct_id());
+        	
+        	
   %>
 <div class="gallery">
- <img src="<%=f.getImage() %>"width="600" height="400"/>
+ 
+ 
+ 
+ <img src="http://localhost:8085/Hibernate_pro/ShowImage?id=<%=f.getProduct_id()%>"width="600" height="400"/>
  <h3 class="card-title"><%=f.getProduct_id()%></h3>
-<form action="BidPage.jsp" method="post">
- <input type="submit" value="Bid Now">
- </form>
 			<h5 class="card-subtitle" style="font-family:cursive"><%=f.getProduct_name() %> </h5>
-			</a>
+			
   <div class="desc"><%=f.getDescription()%></div>
  
-   
+ <!-- <form action="InsertBidder.jsp" method="post">
+   <input type="sumbit" class ="btn btn-success" value="Bid Now">
 
+</form> -->
+
+ <a href=" InsertBidder.jsp">Bid Now</a>
 
 <script>
 

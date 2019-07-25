@@ -16,7 +16,7 @@
             <column name="product_name" />
                </property>
        
-        <property name="image" type="java.lang.String">
+        <property name="image" type="byte[]">
             <column name="image" />
         </property>
       

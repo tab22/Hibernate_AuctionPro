@@ -71,6 +71,7 @@ public class ImageServlet extends HttpServlet {
 		    int res= sp.insert(sProf);
 		     if(res>0) {
 		    	 System.out.println("Success");
+		    	 response.sendRedirect("SellerProfilereg.jsp");
 		     }
 		     else
 		     {

@@ -24,5 +24,9 @@
  %>
  
 Record Inserted Successfully <%= id %>
+
+
+
+
 </body>
 </html>

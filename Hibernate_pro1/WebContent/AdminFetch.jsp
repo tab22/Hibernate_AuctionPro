@@ -38,37 +38,45 @@ p {
 
 <%@ include file="navbar.jsp" %>
   
+
+
+ <form method="Post" action="ImageServlet">
 <%
     SellerProfileDao sellerproductDao= new SellerProfileDaoImpl();
         List<SellerProfile>eList = sellerproductDao.ShowAll();
+        int i=0;
+        
+        
         for (SellerProfile f:eList)
         	{
+        	
+        	System.out.println("jsp-"+f.getProduct_id());
+        	
+        	
   %>
 <div class="gallery">
- <img src="<%=f.getImage() %>"width="600" height="400"/>
+ 
+ 
+ 
+ <img src="http://localhost:8085/Hibernate_pro/ShowImage?id=<%=f.getProduct_id()%>"width="600" height="400"/>
  <h3 class="card-title"><%=f.getProduct_id()%></h3>
 			<h5 class="card-subtitle" style="font-family:cursive"><%=f.getProduct_name() %> </h5>
-		
+			
   <div class="desc"><%=f.getDescription()%></div>
-  
-  
  
+ <!-- <form action="InsertBidder.jsp" method="post">
+   <input type="sumbit" class ="btn btn-success" value="Bid Now">
+
+</form> -->
+
+<!--  <a href=" InsertBidder.jsp">Bid Now</a> -->
  
-<form action="Adminjsp.jsp" method="post">
+  
+
   <input type="submit" class="btn btn-danger" value="Delete Product"  > 
  
-    
-  
-  
-  
-<!--   
-  <a href="Adminjsp.jsp">Delete</a>  -->
  <input type="button" class="btn btn-primary" value="Update Time" >
  
-   
-</form>
-
-
 <script>
 
 
@@ -97,7 +105,7 @@ var x = setInterval(function() {
  
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("<%=f.getProduct_id()%>").innerHTML = "Sold to <%=     %>";
+    document.getElementById("<%=f.getProduct_id()%>").innerHTML = "Expired";
   }
 }, 1000);
 
