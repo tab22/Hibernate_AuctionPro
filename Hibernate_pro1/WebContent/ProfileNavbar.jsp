@@ -52,11 +52,9 @@ background: linear-gradient(90deg, rgba(42,26,127,1) 0%, rgba(57,57,162,1) 35%, 
 
  <div class="navbar-collapse collapse w-100 order-3 dual-collapse2"  id="navbarColor01">
         <ul class="navbar-nav ml-auto">
-       <li class="nav-item active">
-                <a class="nav-link"  href="Home.jsp" style="font-size: 25px">Home</a><span class="sr-only">(current)</span></a>
-            </li>
+       
             <li class="nav-item">
-                <a class="nav-link" href="#" style="font-size: 25px">About Us </a>
+                <a class="nav-link" href="AboutUs.jsp" style="font-size: 25px">About Us </a>
             </li>
               <li class="nav-item">
                 <a class="nav-link" href="contactus.jsp" style="font-size: 25px">Contact</a>

@@ -1,8 +1,18 @@
 package com.model.in;
 
-import java.sql.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="Bidder")
 public class Bidder {
+	
+	 @Id
+	    @GeneratedValue
+	    @Column(name="product_id")
     private int id;
 	private String name;
 	private String email;

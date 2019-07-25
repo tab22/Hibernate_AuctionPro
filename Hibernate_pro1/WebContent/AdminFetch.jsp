@@ -55,7 +55,7 @@ p {
  
  
 <form action="Adminjsp.jsp" method="post">
-  <input type="submit" class="btn btn-danger" value="Delete Product"  onclick="<%=f.getProduct_id() %>"> 
+  <input type="submit" class="btn btn-danger" value="Delete Product"  > 
  
     
   
@@ -97,7 +97,7 @@ var x = setInterval(function() {
  
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
+    document.getElementById("<%=f.getProduct_id()%>").innerHTML = "Sold to <%=     %>";
   }
 }, 1000);
 

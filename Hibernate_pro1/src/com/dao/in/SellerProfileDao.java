@@ -11,7 +11,7 @@ public interface SellerProfileDao {
 
 	   List<SellerProfile> ShowAll();
 	   
-	   void delete(int product_name);
+	   int delete(int product_id);
 
 	   
 	    void update(SellerProfile s);

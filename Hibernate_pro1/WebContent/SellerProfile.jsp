@@ -158,7 +158,7 @@ response.setHeader("Cache-Control","no-cache,no-store,must-revalidate");
 	
 	<h3 style="text-align:center;font-family: cursive;font-size: 30px">Seller Details</h3>
 	
-	<form action="SellerProfilereg.jsp"><p></p>
+	<form action="ImageServlet" method="post" enctype="multipart/form-data" ><p></p>
 
 	<p style="font-size: 15px">Product Name</p>
 	<input type="text" name="product_name" id="ProductName"  placeholder="Product_name">

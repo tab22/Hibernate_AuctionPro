@@ -115,7 +115,7 @@ body{
 
     </div>
 
-</body>
+</body><!-- 
 <script type="text/javascript">
 function toggleResetPswd(e){
     e.preventDefault();
@@ -129,5 +129,5 @@ function toggleSignUp(e){
 
 }
 
-})</script>
+})</script> -->
 </html>

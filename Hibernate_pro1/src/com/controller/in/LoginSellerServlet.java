@@ -51,12 +51,7 @@ public class LoginSellerServlet extends HttpServlet {
 	     else{
 	         response.sendRedirect("error.jsp");
 		
-		
-		
-		
-		
-		
-		
+			
 	     }
 	}
 		

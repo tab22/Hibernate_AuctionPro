@@ -1,29 +1,48 @@
 package com.model.in;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Lob;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="sellerprofile")
+
+
+
 public class SellerProfile {
 
-	public int product_id;
-	public int seller_id;
-	public String product_name;
-	public String image;
-	public String description;
-	public int price;
-	public String time;
+	
+	 @Id
+	    @GeneratedValue
+	    @Column(name="product_id")
+	private int product_id;
+	 
+	 
+	 @Column(name="seller_id", nullable=false)
+	 private int seller_id;
+	 @Column(name="product_name", nullable=false)
+	 private String product_name;
+	
+	 @Lob
+	    @Column(name="image", nullable=false, columnDefinition="mediumblob")
+	 private  byte[] image;
+	
+	 @Column(name="description", nullable=false)
+	private String description;
+	 
+	 @Column(name="price", nullable=false)
+	private int price;
+	 
+	 @Column(name="time", nullable=false)
+	private String time;
 	public SellerProfile() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public SellerProfile(int product_id, int seller_id, String product_name, String image, String description,
-			int price, String time) {
-		super();
-		this.product_id = product_id;
-		this.seller_id = seller_id;
-		this.product_name = product_name;
-		this.image = image;
-		this.description = description;
-		this.price = price;
-		this.time = time;
-	}
+
 	public int getProduct_id() {
 		return product_id;
 	}
@@ -42,10 +61,10 @@ public class SellerProfile {
 	public void setProduct_name(String product_name) {
 		this.product_name = product_name;
 	}
-	public String getImage() {
+	public byte[] getImage() {
 		return image;
 	}
-	public void setImage(String image) {
+	public void setImage(byte[] image) {
 		this.image = image;
 	}
 	public String getDescription() {

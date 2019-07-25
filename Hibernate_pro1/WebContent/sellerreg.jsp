@@ -18,7 +18,8 @@
  int id=selDao.insert(emp);
     
  %>
- <h1></h1>
+ <%@ include file="regsuccessfull.jsp" %>
+
  
 
 

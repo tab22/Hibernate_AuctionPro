@@ -66,28 +66,24 @@ public class SellerProfileDaoImpl  implements SellerProfileDao{
 	}
 
 	@Override
-	public void delete(int product_name) {
-		Session session = null;;
-		Transaction tx = null;
-
-		try {
-			session = HibernateUtil.getSession();
+	public int delete(int product_id) {
+		Session session =null;
+		Transaction tx=null;
+		try{
+			session=HibernateUtil.getSession();
 			tx = session.beginTransaction();
-			
-			SellerProfile sp = session.get(SellerProfile.class, product_name);
-			System.out.println(sp.getProduct_id());
-			session.delete(sp);
-			//session.delete("Employee.class", empno);
-			/*Employee e=  session.load(Employee.class,empno);
-			session.remove(e);*/
-
-			tx.commit();
-		} catch (HibernateException h) {
-			System.out.println(h);
-		} finally {
-			session.close();
-			//HibernateUtil.closeSessionFactory();
+            SellerProfile m= session.load(SellerProfile.class, product_id);
+            session.delete(m);	    
+	         tx.commit();		
+		}catch (HibernateException e) {
+			e.printStackTrace();
+			tx.rollback();
 		}
+		finally{
+		session.close();
+		
+        }		
+		return product_id;	
 	
 		
 		
