@@ -355,8 +355,8 @@ function validation()
     			  
                   <div class="form-group">
                     <label for="Gender">Gender</label>&emsp;&emsp;
-								<label class="radio-inline"><input type="radio" name="gender"><strong>Male</strong></label>
-								<label class="radio-inline"><input type="radio" name="gender"><strong>Female</strong></label>
+								<label class="radio-inline"><input type="radio" name="gender" value="male"><strong>Male</strong></label>
+								<label class="radio-inline"><input type="radio" name="gender" value="female"><strong>Female</strong></label>
 	                  </div>
 	                  
 	                     <div class="form-group">

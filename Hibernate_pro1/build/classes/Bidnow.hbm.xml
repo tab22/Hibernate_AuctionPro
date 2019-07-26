@@ -17,7 +17,7 @@
         </property>
       
       
-          <property name="price"  type="java.lang.String" >
+          <property name="price"  type="long" >
             <column name="price" />
         </property>
         

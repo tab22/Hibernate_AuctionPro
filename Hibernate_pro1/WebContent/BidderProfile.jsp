@@ -99,7 +99,7 @@ response.setHeader("Cache-Control","no-cache,no-store,must-revalidate");
 
 </form> -->
 
- <a href=" InsertBidder.jsp">Bid Now</a>
+ <a href=" BidPage.jsp">Bid Now</a>
 
 <script>
 

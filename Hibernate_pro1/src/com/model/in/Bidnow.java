@@ -82,8 +82,8 @@ public class Bidnow {
 public int id;
 public int product_id;
 public int bidder_id;
-public String price;
-public Bidnow(int id, int product_id, int bidder_id, String price) {
+public long price;
+public Bidnow(int id, int product_id, int bidder_id, long price) {
 	super();
 	this.id = id;
 	this.product_id = product_id;
@@ -112,10 +112,10 @@ public int getBidder_id() {
 public void setBidder_id(int bidder_id) {
 	this.bidder_id = bidder_id;
 }
-public String getPrice() {
+public long getPrice() {
 	return price;
 }
-public void setPrice(String price) {
+public void setPrice(long price) {
 	this.price = price;
 }
 @Override
